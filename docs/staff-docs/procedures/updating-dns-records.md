@@ -9,10 +9,10 @@ The repo at <https://github.com/ocf/dns> holds the DNS configurations of the OCF
 
 Before adding an entry, make sure that your IP octet isn't currently being used by the OCF Network!! This step can only be performed by an OCF administrator or root user.
 
-Use `ldap-add-host` from `ocf/utils` to add your new host. Ex:
+Log into an OCF device, use `ldap-add-host` to add your new host. Ex:
 
 ```python
-ldap-add-host <hostname> <octet> <type>
+kinit <your-username>/admin && ldap-add-host <hostname> <octet> <type>
 ```
 
 The main `type` categories are `server`, `desktop`, `staffvm`. Some others are `ipmi`, `printer` and `dhcp`
