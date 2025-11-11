@@ -27,7 +27,18 @@ Destroy:
     `sudo zfs create staffvm/USERNAME -o mountpoint=/staffvm/USERNAME`
  3. Create the VM named VMNAME (natural disaster themed). iso is in 
 
-    `sudo virt-install --name VMNAME --memory 2048 --cpu host --vcpus 1 --disk size=5 --boot uefi --graphics none --cdrom debian-12.9.0-amd64-netinst.iso --osinfo detect=on,name=debian11`
+   ```
+   sudo virt-install \
+      --name VMNAME \
+      --memory 2048 \
+      --cpu host \
+      --vcpus 1 \
+      --disk size=5 \
+      --boot uefi \
+      --graphics none \
+      --cdrom debian-12.9.0-amd64-netinst.iso \
+      --osinfo detect=on,name=debian11
+   ```
  4. Press 'e' on the Install option
  5. add the argument `console=ttyS0` to the linux line
 
@@ -48,5 +59,12 @@ Destroy:
 15. no proxy
 16. [add DNS](https://docs.ocf.berkeley.edu/doc/updating-dns-records-OXi75lHJHb)
 
+## Log on creating a NixOS staff VM
 
-\
+ When trying to provision a NixOS VM through ISO (after step 3.), we ran into an issue where no bootable option or device was found.
+The way to solve this was to attach the ISO first:
+
+`virsh attach-disk [domain name] /var/lib/libvirt/images/latest-nixos-minimal-x86_64-linux.iso sda --driver qemu --type cdrom`
+
+Then disable secure boot in BIOs and add "console=ttys0" to the bootloader screen by pressing "e" and appending the parameter.
+
