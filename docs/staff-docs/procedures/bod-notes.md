@@ -15,8 +15,8 @@ If you have something you want to talk about at BoD, you should note it down on 
         - Name the file YYYY-MM-DD.md
         - Copy the contents from docs/bod/template into the new file.
     - If you're editing the BoD notes on an existing branch, there should already be a file named YYYY-MM-DD.md for you to select. Then, click the pencil icon in the top right corner.
-4. Make your additions to the file, then click "Commit changes...", add a short commit message ("add topic to bod notes" is fine), and click "Commit changes". And you're done!
-
+4. Make your additions to the file, then click "Commit changes...", add a short commit message ("add topic to bod notes" is fine), and click "Commit changes".
+5. Create a pull request and get it merged!
 
 ## CLI
 
@@ -26,7 +26,9 @@ If you have something you want to talk about at BoD, you should note it down on 
 4. `git add --all`
 5. `git commit -m "update bod notes"`
 6. `git push`
+7. Go create a PR for the branch on github, either using GitHub Cli or on the website.
 
-## My branch is out-of-sync with the main branch
+## FAQ
+### My branch is out-of-sync with the main branch!
 
 Do steps 1-2 of the CLI guide, then run `git pull`, `git rebase origin/main`, and `git push --force`.
