@@ -190,6 +190,12 @@ services.  SoundCloud, a music streaming company that runs massive bare-metal
 Kubernetes clusters, also has an interesting blog post about [running NodePort
 in production][soundcloud-nodeport].
 
+FAQ:
+
+## tls internal error when logging into pod
+`kubectl get csr`
+approve all the requests: `kubectl get csr -o name | xargs kubectl certificate approve`
+
 [kubernetes]: https://kubernetes.io/
 [cncf]: https://cncf.io
 [etcd-io]: https://github.com/etcd-io/etcd
