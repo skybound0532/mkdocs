@@ -52,5 +52,7 @@ also, don't forget postgres needs to be manually updated between postgres versio
 ## I'm not in one of the rooms on matrix! How do I join?
 go to matrix, add a room, remove the 'public room' or other search filter, `#_discord_735620315111096391_1288710167633985536:ocf.io`
 
-## becoming matrix admin
-do it with sql commands. life sucks buddy
+## accessing matrix database
+- proxmox ssh into scootaloo, the host for matrix and irc.
+- `sudo -u matrix-synapse psql`
+- `SELECT name, admin FROM user WHERE name='@jaysa:ocf.io'` to check if the user exists
