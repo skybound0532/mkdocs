@@ -76,7 +76,7 @@ The basic steps to migration are as follows:
 2. Use the web admin dashboard to install all the themes and plugins you were
    using at WordPress.com
 
-3. Log into your WordPress.com dashboard and go to `Settings > Export` to
+3. Log into your WordPress.com dashboard and go to `Tools > Export` to
    download a zipped XML file with all your site's posts and content. Note that
    this export usually will not include all of your media content.
 
